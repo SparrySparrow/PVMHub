@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PVM Hub</title>
+<style>
+    /* Global Styles */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1f1f1f;
+        color: #ddd;
+        transition: background-color 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 100px auto;
+        text-align: center;
+    }
+
+    h1, .additional-title, p {
+        font-size: 3rem;
+        font-weight: normal;
+        margin: 0;
+        color: #fff;
+        transition: color 0.3s ease;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: #999;
+        margin-top: 10px;
+        transition: color 0.3s ease;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+        background-color: #121212;
+        color: #ccc;
+    }
+
+    body.dark-mode h1, body.dark-mode .additional-title, body.dark-mode p {
+        color: #fff;
+    }
+
+    /* Copy Script Button */
+    .copy-script-btn, .raw-btn {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .copy-script-btn:hover, .raw-btn:hover {
+        background-color: #555;
+        transform: scale(1.05);
+    }
+
+    .copy-script-btn:active, .raw-btn:active {
+        transform: translateY(2px);
+    }
+
+    /* Custom Alert */
+    .custom-alert {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .show-alert {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    /* Image */
+    .image-container {
+        margin-top: 20px;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    /* Fade In Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+</head>
+<body class="dark-mode">
+<div class="container">
+    <h1>PVM Hub</h1>
+    <p>Your #1 scripting utility</p>
+    <button class="copy-script-btn" onclick="copyScript()">Copy Script</button>
+    <button class="raw-btn" onclick="openRawScript()">Raw</button>
+    <div id="customAlert" class="custom-alert"></div>
+    <div class="image-container">
+        <img src="thing.png" alt="Thing Image">
+        <h1 class="additional-title">Supported on every Executor</h1>
+        <p>12+ scripts, just for you</p>
+    </div>
+</div>
+
+<script>
+    // Function to copy script and show custom alert
+    function copyScript() {
+        // Dummy function, you can implement the copy functionality here
+        showAlert("Script copied!");
+    }
+
+    // Function to open raw script
+    function openRawScript() {
+        window.open('script.txt', '_blank');
+    }
+
+    // Function to show custom alert
+    function showAlert(message) {
+        var alertBox = document.getElementById('customAlert');
+        alertBox.textContent = message;
+        // Adjust font size based on message length
+        if (message.length > 20) {
+            alertBox.style.fontSize = '0.8rem';
+        } else {
+            alertBox.style.fontSize = '1rem';
+        }
+        alertBox.classList.add('show-alert');
+        setTimeout(function() {
+            alertBox.classList.remove('show-alert');
+        }, 2000); // Hide alert after 2 seconds
+    }
+</script>
+</body>
+</html>
