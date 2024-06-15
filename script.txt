@@ -427,16 +427,18 @@ G2L["38"] = Instance.new("LocalScript", G2L["36"]);
 
 -- StarterGui.PVM Hub.Hub.ScrollingFrame.Script13
 G2L["39"] = Instance.new("TextButton", G2L["13"]);
+G2L["39"]["TextWrapped"] = true;
 G2L["39"]["BorderSizePixel"] = 0;
 G2L["39"]["TextSize"] = 20;
 G2L["39"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["39"]["TextScaled"] = true;
 G2L["39"]["BackgroundColor3"] = Color3.fromRGB(173, 173, 173);
 G2L["39"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 G2L["39"]["Size"] = UDim2.new(0, 377, 0, 37);
 G2L["39"]["BackgroundTransparency"] = 0.5;
 G2L["39"]["Name"] = [[Script13]];
 G2L["39"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["39"]["Text"] = [[TND Bypass]];
+G2L["39"]["Text"] = [[TND Bypass (Double Click)]];
 G2L["39"]["Position"] = UDim2.new(0.01542, 0, 1.04624, 0);
 
 -- StarterGui.PVM Hub.Hub.ScrollingFrame.Script13.UIStroke
