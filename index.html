@@ -127,10 +127,14 @@
 </div>
 
 <script>
-    // Function to copy script and show custom alert
+    // Function to copy script to clipboard and show custom alert
     function copyScript() {
-        // Dummy function, you can implement the copy functionality here
-        showAlert("Script copied!");
+        var script = 'loadstring(game:HttpGet("https://sparrysparrow.github.io/PVMHub/script.txt"))()';
+        navigator.clipboard.writeText(script).then(function() {
+            showAlert("Script copied to clipboard!");
+        }, function(err) {
+            console.error('Failed to copy: ', err);
+        });
     }
 
     // Function to open raw script
